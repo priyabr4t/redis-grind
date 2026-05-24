@@ -32,7 +32,7 @@ app.post('/otp/verify', async (req, res) => {
     // validate user
     await redis.del(otpKey(phone));
     res.json({ message: "otp verified successfully" })
-})
+}) 
 
 app.get('/otp/:phone/ttl', async (req, res) => {
     const ttl = await redis.ttl(otpKey(req.params.phone))
