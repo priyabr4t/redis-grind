@@ -5,7 +5,7 @@ const app = express()
 app.use(express.json())
 
 app.use("/welcome-email", async (req, res) => {
-    const job = emailQueue.add("send-welcome-email",
+    const job = await emailQueue.add("send-welcome-email",
         {
             to: req.body.to,
             name: req.body.name || "Leaner"

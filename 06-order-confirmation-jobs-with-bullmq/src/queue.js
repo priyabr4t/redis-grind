@@ -5,7 +5,7 @@ const connection = {
     port: 6379
 }
 
-const emailQueue = new Queue('emails', connection)
+const emailQueue = new Queue('emails', { connection })
 
 module.exports = {
     connection,
